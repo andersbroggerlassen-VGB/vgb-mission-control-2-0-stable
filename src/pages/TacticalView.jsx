@@ -13,18 +13,18 @@ export default function TacticalView({ state }) {
 
         <Panel title="RØD BASE CAMERA" className="tactical-camera">
           <CameraFrame
-            title="Rød kamera"
-            subtitle="RØD BASE"
-            url={state.cameraRedUrl}
-          />
+  title=""
+  subtitle=""
+  url={state.cameraRedUrl}
+/>
         </Panel>
 
         <Panel title="BLÅ BASE CAMERA" className="tactical-camera">
-          <CameraFrame
-            title="Blå kamera"
-            subtitle="BLÅ BASE"
-            url={state.cameraBlueUrl}
-          />
+         <CameraFrame
+  title=""
+  subtitle=""
+  url={state.cameraRedUrl}
+/>
         </Panel>
       </div>
     </Layout>
