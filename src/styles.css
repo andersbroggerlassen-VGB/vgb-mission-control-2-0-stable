@@ -17,7 +17,7 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 .tactical-view {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 340px 1fr;
+  grid-template-rows: 390px 1fr;
   gap: 16px;
   padding: 12px;
   height: calc(100vh - 124px);
@@ -38,7 +38,7 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 }
 
 .tactical-view .scoreboard.big .score-team {
-  min-height: 140px;
+  min-height: 120px;
 }
 
 .tactical-view .scoreboard.big .score-team strong {
@@ -50,7 +50,7 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 }
 
 .tactical-view .camera-body {
-  height: calc(100% - 12px);
+  height: calc(100% - 2px);
 }
 
 .tactical-view .camera-body iframe {
@@ -59,11 +59,11 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 }
 
 .tactical-view .no-signal span {
-    font-size: 72px;
+    font-size: 90px;
 }
 
 .tactical-view .no-signal small {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 @media (max-width:900px){
