@@ -42,15 +42,16 @@ export default function Layout({ children, title = 'MISSION CONTROL', compact = 
           ONLINE <b>{time}</b>
         </div>
 
-        <nav className="nav-v2">
-          <Link href="/admin">Admin</Link>
-          <Link href="/briefing">Briefing</Link>
-          <Link href="/score">Score</Link>
-          <Link href="/map">Kort</Link>
-          <Link href="/camera-red">Rød cam</Link>
-          <Link href="/camera-blue">Blå cam</Link>
-          <Link href="/camera-overview">Overblik</Link>
-        </nav>
+       <nav className="nav-v2">
+  <Link href="/admin">Admin</Link>
+  <Link href="/briefing">Briefing</Link>
+  <Link href="/score">Score</Link>
+  <Link href="/tactical">Tactical</Link>
+  <Link href="/map">Kort</Link>
+  <Link href="/camera-red">Rød cam</Link>
+  <Link href="/camera-blue">Blå cam</Link>
+  <Link href="/camera-overview">Overblik</Link>
+</nav>
       </header>
 
       {children}
