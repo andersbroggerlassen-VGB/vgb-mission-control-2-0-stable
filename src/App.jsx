@@ -15,6 +15,6 @@ export default function App({ state }) {
   if (path === '/camera-red') return <CameraPage state={state} camera="red" />;
   if (path === '/camera-blue') return <CameraPage state={state} camera="blue" />;
   if (path === '/camera-overview') return <CameraPage state={state} camera="overview" />;
-  if (path === '/tactical') return <TacticalView state={state} />; />;
+  if (path === '/tactical') return <TacticalView state={state} />;
   return <Dashboard state={state} />;
 }
