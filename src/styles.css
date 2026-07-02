@@ -38,7 +38,7 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 }
 
 .tactical-view .scoreboard.big .score-team {
-  min-height: 120px;
+  min-height: 110px;
 }
 
 .tactical-view .scoreboard.big .score-team strong {
