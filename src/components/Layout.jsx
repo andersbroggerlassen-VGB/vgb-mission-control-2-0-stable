@@ -26,7 +26,7 @@ export default function Layout({ children, title = 'MISSION CONTROL', compact = 
           <img src={logo} alt="Vejle Gel Blaster" />
           <div>
             <strong>VEJLE GEL BLASTER</strong>
-            <span>{title.replace('SYSTEM', '').trim()}</span>
+            <span>MISSION STATUS</span>
           </div>
         </div>
 
