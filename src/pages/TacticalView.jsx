@@ -1,78 +1,37 @@
-.tactical-view {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 230px 1fr 260px;
-  gap: 12px;
-  padding: 12px;
-  height: calc(100vh - 124px);
-  overflow: hidden;
-}
+import Layout from '../components/Layout.jsx';
+import Panel from '../components/Panel.jsx';
+import Scoreboard from '../components/Scoreboard.jsx';
+import CameraFrame from '../components/CameraFrame.jsx';
 
-.tactical-score {
-  grid-column: 1 / 3;
-}
+export default function TacticalView({ state }) {
+  return (
+    <Layout title="TACTICAL VIEW">
+      <div className="tactical-view">
+        <Panel title="LIVE SCOREBOARD" className="tactical-score">
+          <Scoreboard state={state} big />
+        </Panel>
 
-.tactical-map {
-  grid-column: 1 / 3;
-}
+        <Panel title="RØD BASE CAMERA" className="tactical-camera">
+          <CameraFrame title="Rød kamera" subtitle="RØD BASE" url={state.cameraRedUrl} />
+        </Panel>
 
-.tactical-view .panel {
-  min-height: 0;
-  height: 100%;
-  padding: 14px;
-}
+        <Panel title="BLÅ BASE CAMERA" className="tactical-camera">
+          <CameraFrame title="Blå kamera" subtitle="BLÅ BASE" url={state.cameraBlueUrl} />
+        </Panel>
 
-.tactical-view .panel h2 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.tactical-view .scoreboard.big {
-  min-height: 0;
-  height: 170px;
-  transform: none;
-}
-
-.tactical-view .scoreboard.big .score-team {
-  min-height: 110px;
-  padding: 10px;
-}
-
-.tactical-view .scoreboard.big .score-team strong {
-  font-size: 72px;
-}
-
-.tactical-view .scoreboard.big .timebox {
-  padding: 8px;
-}
-
-.tactical-view .scoreboard.big .timebox b {
-  font-size: 58px;
-}
-
-.tactical-view .versus {
-  padding: 12px 0;
-  font-size: 26px;
-}
-
-.tactical-view .camera-body {
-  height: calc(100% - 48px);
-}
-
-.tactical-view .map-placeholder {
-  height: calc(100% - 42px);
-  min-height: 0;
-}
-
-@media (max-width: 900px) {
-  .tactical-view {
-    grid-template-columns: 1fr;
-    height: auto;
-    overflow: visible;
-  }
-
-  .tactical-score,
-  .tactical-map {
-    grid-column: auto;
-  }
+        <Panel title="TACTICAL MAP" className="tactical-map">
+          <div className="map-placeholder">
+            {state.mapUrl ? (
+              <img src={state.mapUrl} alt="Banekort" />
+            ) : (
+              <>
+                <b>TACTICAL MAP</b>
+                <span>Indsæt link til banekort i admin</span>
+              </>
+            )}
+          </div>
+        </Panel>
+      </div>
+    </Layout>
+  );
 }
