@@ -10,17 +10,10 @@ export default function Layout({ children, title = 'MISSION CONTROL', compact = 
     return () => clearInterval(id);
   }, []);
 
-  const time =
-    clock.toLocaleDateString('da-DK', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    }) +
-    ' • ' +
-    clock.toLocaleTimeString('da-DK', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+  const time = clock.toLocaleTimeString('da-DK', {
+  hour: '2-digit',
+  minute: '2-digit'
+});
 
   return (
     <main className={compact ? 'app compact' : 'app'}>
