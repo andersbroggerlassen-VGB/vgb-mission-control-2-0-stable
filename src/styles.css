@@ -77,3 +77,15 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
     grid-column:auto;
   }
 }
+.tactical-view .timebox {
+  padding: 8px 0 0;
+  overflow: hidden;
+}
+
+.tactical-view .timebox .status-badge {
+  display: none;
+}
+
+.tactical-view .timebox b {
+  margin-top: -6px;
+}
