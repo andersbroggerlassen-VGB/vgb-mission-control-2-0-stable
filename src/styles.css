@@ -67,9 +67,17 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 }
 
 .tactical-view .camera-body {
-  height: calc(100% - 34px);
+  height: calc(100% - 0);
 }
 
+.tactical-view .camera-head {
+  position: absolute;
+  top: 44px;
+  left: 18px;
+  right: 18px;
+  z-index: 5;
+  pointer-events: none;
+}
 .tactical-view .no-signal span {
   font-size: 72px;
 }
