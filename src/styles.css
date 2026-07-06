@@ -17,10 +17,10 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 .tactical-view {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 420px 1fr;
-  gap: 16px;
-  padding: 12px;
-  height: calc(100vh - 124px);
+  grid-template-rows: 300px 1fr;
+  gap: 10px;
+  padding: 10px;
+  height: calc(100vh - 118px);
 }
 
 .tactical-score {
@@ -30,62 +30,61 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 .tactical-view .panel {
   height: 100%;
   min-height: 0;
+  padding: 12px;
+}
+
+.tactical-view .panel h2 {
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .tactical-view .scoreboard.big {
-  min-height: 0;
   height: 100%;
+  min-height: 0;
 }
 
 .tactical-view .scoreboard.big .score-team {
-  min-height: 110px;
+  min-height: 120px;
+  padding: 8px;
 }
 
 .tactical-view .scoreboard.big .score-team strong {
-  font-size: 95px;
+  font-size: 96px;
+}
+
+.tactical-view .scoreboard.big .timebox {
+  height: 130px;
+  padding: 4px;
+  overflow: hidden;
 }
 
 .tactical-view .scoreboard.big .timebox b {
-  font-size: 78px;
+  font-size: 84px;
+}
+
+.tactical-view .camera-head {
+  margin-bottom: 6px;
 }
 
 .tactical-view .camera-body {
-  height: calc(100% - 2px);
-}
-
-.tactical-view .camera-body iframe {
-  width: 100%;
-  height: 100%;
+  height: calc(100% - 34px);
 }
 
 .tactical-view .no-signal span {
-    font-size: 90px;
+  font-size: 72px;
 }
 
 .tactical-view .no-signal small {
-    font-size: 28px;
+  font-size: 24px;
 }
 
 @media (max-width:900px){
   .tactical-view{
     grid-template-columns:1fr;
-    grid-template-rows:auto;
     height:auto;
   }
 
   .tactical-score{
     grid-column:auto;
   }
-}
-.tactical-view .timebox {
-  padding: 8px 0 0;
-  overflow: hidden;
-}
-
-.tactical-view .timebox .status-badge {
-  display: none;
-}
-
-.tactical-view .timebox b {
-  margin-top: -6px;
 }
