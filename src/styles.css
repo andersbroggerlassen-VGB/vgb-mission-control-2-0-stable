@@ -250,3 +250,26 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 .tactical-view .status-badge {
   display: none;
 }
+/* Force timer progress visible on Tactical */
+.tactical-view .timebox {
+  position: relative;
+  overflow: visible !important;
+  padding-bottom: 34px !important;
+}
+
+.tactical-view .timer-progress {
+  display: block !important;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: 520px !important;
+  max-width: 70%;
+  height: 12px !important;
+  z-index: 20;
+}
+
+.tactical-view .timer-progress-fill {
+  display: block !important;
+  height: 100% !important;
+}
