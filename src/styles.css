@@ -235,3 +235,18 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
   border-right: 2px solid;
   border-bottom: 2px solid;
 }
+/* Tactical timer progress fix */
+.tactical-view .timebox {
+  overflow: visible;
+  padding-bottom: 22px;
+}
+
+.tactical-view .timer-progress {
+  max-width: 520px;
+  height: 12px;
+  margin: 10px auto 0;
+}
+
+.tactical-view .status-badge {
+  display: none;
+}
