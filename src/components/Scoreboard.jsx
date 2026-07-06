@@ -15,14 +15,28 @@ export default function Scoreboard({ state, big = false }) {
       <small>KAMPTID</small>
       <b><TimerText state={state} /></b>
 
-      <div className="timer-progress">
-        <div
-          className="timer-progress-fill"
-          style={{
-           width: `${state.duration ? (((state.remaining ?? state.duration) / state.duration) * 100) : 100}%`
-          }}
-        />
-      </div>
+      <div
+  style={{
+    width: '520px',
+    maxWidth: '70%',
+    height: '14px',
+    margin: '12px auto 0',
+    border: '1px solid rgba(86,255,24,.8)',
+    background: '#071107',
+    overflow: 'hidden',
+    boxShadow: '0 0 18px rgba(86,255,24,.35)'
+  }}
+>
+  <div
+    style={{
+      height: '100%',
+      width: `${state.duration ? (((state.remaining ?? state.duration) / state.duration) * 100) : 100}%`,
+      background: 'linear-gradient(90deg,#56ff18,#a7d400)',
+      boxShadow: '0 0 18px #56ff18',
+      transition: 'width 1s linear'
+    }}
+  />
+</div>
 
       <em className={`status-badge ${String(state.displayStatus).toLowerCase()}`}>{state.displayStatus}</em>
     </div>
