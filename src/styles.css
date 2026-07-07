@@ -286,3 +286,30 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
 .tactical-view .camera-frame-hud .no-signal small {
   font-size: 20px;
 }
+/* FINAL tactical timer fix */
+.tactical-view {
+  grid-template-rows: 340px 1fr !important;
+}
+
+.tactical-view .tactical-score {
+  overflow: visible !important;
+}
+
+.tactical-view .tactical-score.panel {
+  overflow: visible !important;
+}
+
+.tactical-view .scoreboard.big {
+  overflow: visible !important;
+}
+
+.tactical-view .timebox {
+  height: 165px !important;
+  overflow: visible !important;
+  padding-bottom: 28px !important;
+}
+
+.tactical-view .tactical-camera {
+  height: 90% !important;
+  align-self: start !important;
+}
