@@ -17,8 +17,12 @@ function Root() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
+    useEffect(() => {
+    const path = window.location.pathname;
+
+    if (path !== '/score' && path !== '/tactical') return;
     if (!state?.soundEvent?.at || state.soundEvent.at === lastSound) return;
+
     setLastSound(state.soundEvent.at);
     playTone(state.soundEvent.type);
   }, [state?.soundEvent?.at, lastSound]);
