@@ -39,7 +39,7 @@ export default function Scoreboard({ state, big = false }) {
           : 'linear-gradient(90deg,#56ff18,#a7d400)',
     boxShadow: '0 0 18px rgba(86,255,24,.8)',
     transition: 'width 1s linear'
-  }}
+  }
 />
 
       <em className={`status-badge ${String(state.displayStatus).toLowerCase()}`}>{state.displayStatus}</em>
