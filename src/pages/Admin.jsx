@@ -26,7 +26,7 @@ export default function Admin({ state }) {
     const duration = Number(state.duration || state.remaining || 480);
     patchState({
       status: 'LIVE', duration, remaining: duration, endsAt: Date.now() + duration * 1000,
-      soundEvent: { type: 'start', at: Date.now() },
+      soundEvent: { type: 'airhorn', at: Date.now() },
       events: addEvent(state, `Mission startet: ${state.missionName}`)
     });
   };
@@ -68,7 +68,7 @@ export default function Admin({ state }) {
         <label>Rød kamera URL<input value={state.cameraRedUrl} onChange={e => setField('cameraRedUrl', e.target.value)} /></label>
         <label>Blå kamera URL<input value={state.cameraBlueUrl} onChange={e => setField('cameraBlueUrl', e.target.value)} /></label>
         <label>Overblik kamera URL<input value={state.cameraOverviewUrl} onChange={e => setField('cameraOverviewUrl', e.target.value)} /></label>
-        <label>Banekort URL<input value={state.mapUrl} onChange={e => setField('mapUrl', e.target.value)} /></label>
+        <label>Banekort URL<input value={state.m<Panel title="LYDEFFEKTER"><div className="buttons"><button onClick={() => sound('airhorn')}>AIRHORN</button></div></Panel>apUrl} onChange={e => setField('mapUrl', e.target.value)} /></label>
       </Panel>
       <Panel title="LYDEFFEKTER"><div className="buttons"><button onClick={() => sound('siren')}>SIRENE</button><button onClick={() => sound('alarm')}>ALARM</button><button onClick={() => sound('complete')}>MISSION COMPLETE</button><button onClick={() => sound('start')}>START LYD</button></div></Panel>
       <Panel title="SYSTEM"><button className="danger wide" onClick={resetState}>RESET ALT</button></Panel>
