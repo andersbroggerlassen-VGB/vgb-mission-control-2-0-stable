@@ -27,16 +27,20 @@ export default function Scoreboard({ state, big = false }) {
     boxShadow: '0 0 18px rgba(86,255,24,.35)'
   }}
 >
-  <div
-    style={{
-      height: '100%',
-      width: `${state.duration ? (((state.remaining ?? state.duration) / state.duration) * 100) : 100}%`,
-      background: 'linear-gradient(90deg,#56ff18,#a7d400)',
-      boxShadow: '0 0 18px #56ff18',
-      transition: 'width 1s linear'
-    }}
-  />
-</div>
+<div
+  style={{
+    height: '100%',
+    width: `${state.duration ? (((state.remaining ?? state.duration) / state.duration) * 100) : 100}%`,
+    background:
+      ((state.remaining ?? state.duration) / state.duration) <= 0.25
+        ? 'linear-gradient(90deg,#ff2b2b,#ff6a00)'
+        : ((state.remaining ?? state.duration) / state.duration) <= 0.5
+          ? 'linear-gradient(90deg,#ffd400,#ff9d00)'
+          : 'linear-gradient(90deg,#56ff18,#a7d400)',
+    boxShadow: '0 0 18px rgba(86,255,24,.8)',
+    transition: 'width 1s linear'
+  }}
+/>
 
       <em className={`status-badge ${String(state.displayStatus).toLowerCase()}`}>{state.displayStatus}</em>
     </div>
