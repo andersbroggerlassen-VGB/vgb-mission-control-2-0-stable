@@ -273,3 +273,16 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(0,
   display: block !important;
   height: 100% !important;
 }
+/* Make tactical camera panels slightly smaller */
+.tactical-view .tactical-camera {
+  height: 92%;
+  align-self: start;
+}
+
+.tactical-view .camera-frame-hud .no-signal span {
+  font-size: 68px;
+}
+
+.tactical-view .camera-frame-hud .no-signal small {
+  font-size: 20px;
+}
