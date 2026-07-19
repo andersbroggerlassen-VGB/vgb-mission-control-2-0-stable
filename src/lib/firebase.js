@@ -16,7 +16,7 @@ export const defaultState = {
   endsAt: null,
   cameraRedUrl: '',
   cameraBlueUrl: '',
-  cameraOverviewUrl: '',
+  cameraOverviewUrl: 'http://localhost:8889/camera-overview',
   mapUrl: '',
   message: 'Gør jer klar. Næste mission starter snart.',
   events: [],
