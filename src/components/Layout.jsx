@@ -41,8 +41,8 @@ export default function Layout({ children, title = 'MISSION CONTROL', compact = 
   <Link href="/score">Score</Link>
   <Link href="/tactical">Tactical</Link>
   <Link href="/map">Kort</Link>
-  <Link href="/camera-red">Rød cam</Link>
-  <Link href="/camera-blue">Blå cam</Link>
+ <Link href="/camera-red">Grøn base</Link>
+<Link href="/camera-blue">Blå base</Link>
   <Link href="/camera-overview">Overblik</Link>
 </nav>
       </header>

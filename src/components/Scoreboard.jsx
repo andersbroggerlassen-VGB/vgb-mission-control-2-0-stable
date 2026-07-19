@@ -15,11 +15,11 @@ export default function Scoreboard({ state, big = false }) {
         : 'linear-gradient(90deg,#56ff18,#a7d400)';
 
   return (
-    <div className={big ? 'scoreboard big' : 'scoreboard'}>
-      <div className={`score-team red ${redWins ? 'leading' : ''}`}>
-        <span>{state.redTeam}</span>
-        <strong>{state.redScore}</strong>
-      </div>
+   <div className={big ? 'scoreboard big' : 'scoreboard'}>
+  <div className={`score-team red ${redWins ? 'leading' : ''}`}>
+    <span>{state.redTeam}</span>
+    <strong>{state.redScore}</strong>
+  </div>
 
       <div className="versus">VS</div>
 

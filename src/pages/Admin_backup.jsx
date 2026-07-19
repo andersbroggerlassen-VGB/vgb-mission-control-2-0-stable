@@ -44,8 +44,8 @@ export default function Admin({ state }) {
 
   const stop = () => patchState({ status: 'READY', remaining: Number(state.duration), endsAt: null, redScore: 0, blueScore: 0, events: addEvent(state, 'Mission nulstillet') });
   const point = (team, delta) => {
-    const key = team === 'green' ? 'redScore' : 'blueScore';
-    const label = team === 'green' ? 'GRØN' : 'BLÅ';
+    const key = team === 'red' ? 'redScore' : 'blueScore';
+    const label = team === 'red' ? 'RØD' : 'BLÅ';
     patchState({ [key]: Math.max(0, Number(state[key]) + delta), soundEvent: { type: 'point', at: Date.now() }, events: addEvent(state, `${label} ${delta > 0 ? '+1' : '-1'} point`) });
   };
 
@@ -54,7 +54,7 @@ export default function Admin({ state }) {
       <Panel title="KAMPSTYRING" className="admin-control">
         <div className="admin-status"><strong>{formatTime(state.remaining)}</strong><span>{state.displayStatus}</span></div>
         <div className="buttons"><button onClick={start}>START MISSION</button><button onClick={pauseResume}>PAUSE / GENOPTAG</button><button className="danger" onClick={stop}>STOP / NULSTIL</button></div>
-        <div className="buttons"><button className="red" onClick={() => point('green', 1)}>+1 GRØN</button><button className="blue" onClick={() => point('blue', 1)}>+1 BLÅ</button><button onClick={() => point('green', -1)}>-1 GRØN</button><button onClick={() => point('blue', -1)}>-1 BLÅ</button></div>
+        <div className="buttons"><button className="red" onClick={() => point('red', 1)}>+1 RØD</button><button className="blue" onClick={() => point('blue', 1)}>+1 BLÅ</button><button onClick={() => point('red', -1)}>-1 RØD</button><button onClick={() => point('blue', -1)}>-1 BLÅ</button></div>
         <label>Missionstid i minutter<input type="number" min="1" value={Math.round(Number(state.duration) / 60)} onChange={e => { const d = Math.max(60, Number(e.target.value) * 60); patchState({ duration: d, remaining: d, endsAt: null, status: 'READY' }); }} /></label>
       </Panel>
       <Panel title="MISSION">
@@ -63,9 +63,9 @@ export default function Admin({ state }) {
         <label>Mission tekst<textarea value={state.missionText} onChange={e => setField('missionText', e.target.value)} /></label>
         <label>Besked til skærme<input value={state.message} onChange={e => setField('message', e.target.value)} /></label>
       </Panel>
-      <Panel title="HOLD"><label>Grønt hold<input value={state.redTeam} onChange={e => setField('redTeam', e.target.value)} /></label><label>Blåt hold<input value={state.blueTeam} onChange={e => setField('blueTeam', e.target.value)} /></label></Panel>
+      <Panel title="HOLD"><label>Rødt hold<input value={state.redTeam} onChange={e => setField('redTeam', e.target.value)} /></label><label>Blåt hold<input value={state.blueTeam} onChange={e => setField('blueTeam', e.target.value)} /></label></Panel>
       <Panel title="KAMERAER OG KORT">
-        <label>Grønt kamera URL<input value={state.cameraRedUrl} onChange={e => setField('cameraRedUrl', e.target.value)} /></label>
+        <label>Rød kamera URL<input value={state.cameraRedUrl} onChange={e => setField('cameraRedUrl', e.target.value)} /></label>
         <label>Blå kamera URL<input value={state.cameraBlueUrl} onChange={e => setField('cameraBlueUrl', e.target.value)} /></label>
         <label>Overblik kamera URL<input value={state.cameraOverviewUrl} onChange={e => setField('cameraOverviewUrl', e.target.value)} /></label>
         <label>Banekort URL<input value={state.mapUrl} onChange={e => setField('mapUrl', e.target.value)} /></label>
@@ -75,3 +75,4 @@ export default function Admin({ state }) {
     </div>
   </Layout>;
 }
+<Panel title="LYDEFFEKTER"><div className="buttons"><button onClick={() => sound('airhorn')}>AIRHORN</button></div></Panel>
