@@ -30,7 +30,19 @@ export default function CameraFrame({ title, subtitle, url }) {
 
       <div className="camera-body">
         {url ? (
-          <iframe src={url} title={title} allowFullScreen />
+       <iframe
+  src={url}
+  title={title}
+  allow="autoplay; fullscreen"
+  allowFullScreen
+  scrolling="no"
+  style={{
+    width: "100%",
+    height: "100%",
+    border: "0",
+    display: "block"
+  }}
+/>
         ) : (
           <div className="no-signal">
             <span>NO SIGNAL</span>
