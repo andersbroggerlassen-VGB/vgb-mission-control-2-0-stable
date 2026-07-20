@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from './Link.jsx';
 import logo from '../assets/vgb-logo.png';
+console.log(logo);
 
 export default function Layout({ children, title = 'MISSION CONTROL', compact = false }) {
   const [clock, setClock] = useState(new Date());
@@ -23,11 +24,11 @@ export default function Layout({ children, title = 'MISSION CONTROL', compact = 
 
       <header className="topbar topbar-v2">
         <div className="brand brand-v2">
-          <img src={logo} alt="Vejle Gel Blaster" />
+        <img src={logo} alt="Vejle Gel Blaster" className="brand-logo" />
           <div>
-            <strong>VEJLE GEL BLASTER</strong>
-            <span>MISSION STATUS</span>
-          </div>
+  <strong>VEJLE GEL BLASTER</strong>
+  <span>MISSION STATUS</span>
+</div>
         </div>
 
         <div className="top-status">
