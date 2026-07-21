@@ -44,6 +44,7 @@ function Root() {
     if (lastPlayed === eventId) return;
 
     localStorage.setItem('vgbLastSoundEvent', eventId);
+    console.log("SOUND EVENT:", state.soundEvent);
  switch (state.soundEvent.type) {
   case 'countdown':
     playCountdown();
@@ -79,9 +80,13 @@ function Root() {
   }, [state?.soundEvent?.at]);
 
   useEffect(() => {
-    const path = window.location.pathname;
-    if (path !== '/score' && path !== '/tactical') return;
-    if (!computed) return;
+  const path = window.location.pathname;
+
+  console.log('PATH:', path);
+  console.log('STATE SOUND EVENT:', state?.soundEvent);
+
+  if (path !== '/score' && path !== '/tactical') return;
+  if (!state?.soundEvent?.at) return;
     if (computed.status !== 'LIVE') return;
     if (computed.remaining > 0) return;
     if (!computed.endsAt) return;
