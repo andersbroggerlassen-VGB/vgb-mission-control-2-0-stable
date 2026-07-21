@@ -3,7 +3,16 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { subscribeState } from './lib/firebase.js';
 import { getRemainingSeconds } from './lib/time.js';
-import { playTone } from './lib/audio.js';
+import {
+  playTone,
+  playCountdown,
+  playGreenScore,
+  playBlueScore,
+  playTwoMinutes,
+  playBattleEnded,
+  playGreenWins,
+  playBlueWins
+} from './lib/audio.js';
 import './styles.css';
 
 function Root() {
@@ -35,7 +44,38 @@ function Root() {
     if (lastPlayed === eventId) return;
 
     localStorage.setItem('vgbLastSoundEvent', eventId);
+ switch (state.soundEvent.type) {
+  case 'countdown':
+    playCountdown();
+    break;
+
+  case 'greenScore':
+    playGreenScore();
+    break;
+
+  case 'blueScore':
+    playBlueScore();
+    break;
+
+  case 'twoMinutes':
+    playTwoMinutes();
+    break;
+
+  case 'battleEnded':
+    playBattleEnded();
+    break;
+
+  case 'greenWins':
+    playGreenWins();
+    break;
+
+  case 'blueWins':
+    playBlueWins();
+    break;
+
+  default:
     playTone(state.soundEvent.type);
+}
   }, [state?.soundEvent?.at]);
 
   useEffect(() => {
